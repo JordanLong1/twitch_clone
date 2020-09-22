@@ -3,7 +3,7 @@ import { Field, reduxForm} from 'redux-form' // F is capitalized because it is a
 
 class StreamCreate extends React.Component {
 
-    renderInput( {input, label}) {
+    renderInput( {input, label, meta}) {
         return (
             <div className='field'>
                 <label>{label}</label>
