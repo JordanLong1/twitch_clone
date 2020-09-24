@@ -22,8 +22,10 @@ export const signOut = () => {
 };
 
 export const createStream = (formValues) => {
-    return async dispatch => {
-       const response = await streams.post('/streams', formValues); // post request with axios
+    return async (dispatch, getState) => {
+        const {userId} = getState().auth; // we use getState() here to give us access to the stores state so we can pluck out the userId from it
+       const response = await streams.post('/streams', {...formValues, userId}); // post request with axios. 
+       // now when we post a new stream we are going to posting all of our form values ^ and the userId added onto it as well
         dispatch({ type: CREATE_STREAM, payload: response.data})
     }
 }
