@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
+// with react-router each component needs to be designed to work in isolation (fetch its own data)
 import StreamCreate from './streams/StreamCreate'
 import StreamEdit from './streams/StreamEdit'
 import StreamDelete from './streams/StreamDelete'
