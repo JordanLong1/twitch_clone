@@ -1,4 +1,6 @@
 import streams from '../apis/Streams'
+import createBrowserHistory from '../history'
+
 import {
     SIGN_IN, 
     SIGN_OUT, 
@@ -27,6 +29,9 @@ export const createStream = (formValues) => {
        const response = await streams.post('/streams', {...formValues, userId}); // post request with axios. 
        // now when we post a new stream we are going to posting all of our form values ^ and the userId added onto it as well
         dispatch({ type: CREATE_STREAM, payload: response.data})
+        // Do some programmtic navigation to get the user back to the root route below:
+        createBrowserHistory.push('/')
+
     }
 }
 export const fetchStreams = () => async dispatch => {
