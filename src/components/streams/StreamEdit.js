@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React from 'react'; 
 import {connect} from 'react-redux'
 import {fetchStream, editStream} from '../../actions'
@@ -19,8 +20,8 @@ class StreamEdit extends React.Component {
         return (
            <div>
                <h3>Edit a Stream</h3>
-               {/* initailValues is a special prop from redux form library, we add two {{}} below to create an object with jsx */}
-               <StreamForm initialValues={ {title: 'Edit Me', description: 'Change me too'} } onSubmit={this.onSubmit}/> 
+               {/* initailValues is a special prop from redux form library, we add two {{}} below to create an object with jsx. (ended up taking that code out) */}
+               <StreamForm initialValues={_.pick(this.props.stream, 'title', 'description')} onSubmit={this.onSubmit}/> 
            </div>
         )
     }
