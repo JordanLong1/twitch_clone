@@ -19,7 +19,8 @@ class StreamEdit extends React.Component {
         return (
            <div>
                <h3>Edit a Stream</h3>
-               <StreamForm onSubmit={this.onSubmit}/>
+               {/* initailValues is a special prop from redux form library, we add two {{}} below to create an object with jsx */}
+               <StreamForm initialValues={ {title: 'Edit Me', description: 'Change me too'} } onSubmit={this.onSubmit}/> 
            </div>
         )
     }
