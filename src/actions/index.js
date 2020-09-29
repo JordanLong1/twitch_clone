@@ -47,7 +47,7 @@ export const fetchStream = (id) => async dispatch => {
 }
 
 export const editStream = (id, formvalues) => async dispatch => {
-    const response = await streams.put(`/streams/${id}`, formvalues) // we use form values cause we need to specify what it is we are updating
+    const response = await streams.patch(`/streams/${id}`, formvalues) // we use form values cause we need to specify what it is we are updating
 
     dispatch({ type: EDIT_STREAM, payload: response.data});
     createBrowserHistory.push('/')
