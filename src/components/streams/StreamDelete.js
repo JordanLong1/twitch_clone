@@ -4,7 +4,7 @@ import history from '../../history'
 class StreamDelete extends React.Component {
 
     renderActions() {
-    const actions = (
+    return (
        <React.Fragment >
            <button className='ui button negative'>Delete</button>
            <button className='ui button'>Cancel</button>
