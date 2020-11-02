@@ -22,6 +22,11 @@ class StreamShow extends React.Component {
         this.buildPlayer();
     }
 
+    componentWillUnmount() {
+        // good to use when cleaning up resources from component 
+        this.player.destroy();
+    }
+
     buildPlayer() {
         if (this.player || !this.props.stream) {
             return;
