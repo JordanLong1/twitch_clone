@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 // with react-router each component needs to be designed to work in isolation (fetch its own data)
 import StreamCreate from './streams/StreamCreate'
 import StreamEdit from './streams/StreamEdit'
@@ -16,11 +16,13 @@ const App = () => {
   
             <div>
             <Header />
+            <Switch >
             <Route path='/' exact component={StreamList} />
             <Route path='/streams/new' exact component={StreamCreate}/>
             <Route path='/streams/edit/:id' exact component={StreamEdit}/> 
             <Route path='/streams/delete/:id' exact component={StreamDelete} />
-            <Route path='/streams/:id' exact component={StreamShow}/> 
+            <Route path='/streams/:id' exact component={StreamShow}/>
+            </Switch> 
             </div>
 
            
